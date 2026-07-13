@@ -1,8 +1,9 @@
 /* global describe, test, expect */
-import piano from './piano';
-import instruments from '../../lib/instruments.json';
-import { notes2midi } from '../tools';
+import piano from './piano/index.js';
+import { createRequire } from 'module';
+import { notes2midi } from '../tools.js';
 
+const instruments = createRequire(import.meta.url)('../../lib/instruments.json');
 const pianoData = instruments.piano;
 
 describe('Piano Chords', () => {

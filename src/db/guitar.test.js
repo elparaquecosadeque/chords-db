@@ -1,7 +1,7 @@
 /* global it, describe, expect */
 
-import guitar from './guitar';
-import { strChord2array, chord2midi, processString } from '../tools';
+import guitar from './guitar/index.js';
+import { strChord2array, chord2midi, processString } from '../tools.js';
 
 describe('Guitar Chords', () => {
   describe('Strings', () => {

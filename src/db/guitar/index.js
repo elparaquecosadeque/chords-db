@@ -1,8 +1,8 @@
-import main from './main';
-import tunings from './tunings';
-import keys from './keys';
-import suffixes from './suffixes';
-import chords from './chords';
+import main from './main.js';
+import tunings from './tunings.js';
+import keys from './keys.js';
+import suffixes from './suffixes.js';
+import chords from './chords/index.js';
 
 export default {
   main,

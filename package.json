@@ -3,10 +3,11 @@
   "version": "0.6.0",
   "description": "Instrument Chords Database",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "jest src",
-    "stdout": "babel-node src/generate",
-    "build": "babel-node src/generate json",
+    "test": "node --experimental-vm-modules node_modules/jest-cli/bin/jest.js src",
+    "stdout": "node src/generate.js",
+    "build": "node src/generate.js json",
     "precommit": "lint-staged",
     "prepublish": "npm run build",
     "prettier": "prettier --single-quote --write \"src/**/*.{js,jsx}\""
@@ -21,8 +22,7 @@
     "javascript"
   ],
   "author": {
-    "name": "David Rubert",
-    "email": "david.rubert@gmail.com"
+    "name": "gerardo leon"
   },
   "license": "MIT",
   "bugs": {
@@ -30,10 +30,6 @@
   },
   "homepage": "https://github.com/tombatossals/chords-db#readme",
   "devDependencies": {
-    "@babel/cli": "^7.6.4",
-    "@babel/core": "^7.6.4",
-    "@babel/node": "^7.6.3",
-    "@babel/preset-env": "^7.6.3",
     "husky": "^4.2.5",
     "jest": "^30.2.0",
     "lint-staged": "^10.1.7",
@@ -47,11 +43,6 @@
     "src/**/*.{js,jsx,json,css}": [
       "prettier --single-quote --write",
       "git add"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
     ]
   }
 }

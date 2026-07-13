@@ -1,6 +1,6 @@
 /* global it, describe, expect */
 
-import ukulele from './ukulele';
+import ukulele from './ukulele/index.js';
 import {
   strChord2array,
   chord2midi,
@@ -8,7 +8,7 @@ import {
   numberOfBarres,
   unique,
   getNoteFromMidiNumber,
-} from '../tools';
+} from '../tools.js';
 
 describe('ukulele Chords', () => {
   describe('Strings', () => {

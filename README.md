@@ -32,16 +32,15 @@ you want the barre be represented with capo, you can define the "capo" property 
 
 ## How to build/contribute
 
-This project is using *yarn* as package manager, so all the basic command related to 
-the project lifecycle are bound to it. Three basic commands
+This project uses *npm* as package manager. Three basic commands
 
 ```
-yarn build
+npm run build
 ```
 Generates a new version of the library when new chords are added.
 
 ```
-yarn test
+npm test
 ```
 Make some testing of the new added chords. Very useful to detect basic mistakes.
 

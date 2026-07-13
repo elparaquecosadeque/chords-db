@@ -43,14 +43,14 @@ import mmaj11 from './mmaj11.js';
 import add9 from './add9.js';
 import add11 from './add11.js';
 import madd9 from './madd9.js';
-import m9_G from './m9_G.js';
-import m9_C from './m9_C.js';
+import m9_B from './m9_B.js';
+import m9_E from './m9_E.js';
 
+import m_A from './m_A.js';
 import m_Ab from './m_Ab.js';
 import m_B from './m_B.js';
 import m_Bb from './m_Bb.js';
 import m_C from './m_C.js';
-import m_Csharp from './m_Csharp.js';
 import m_D from './m_D.js';
 import m_E from './m_E.js';
 import m_Eb from './m_Eb.js';
@@ -58,10 +58,10 @@ import m_F from './m_F.js';
 import m_Fsharp from './m_Fsharp.js';
 import m_G from './m_G.js';
 import _Ab from './_Ab.js';
+import _A from './_A.js';
 import _B from './_B.js';
 import _Bb from './_Bb.js';
 import _C from './_C.js';
-import _Csharp from './_Csharp.js';
 import _D from './_D.js';
 import _E from './_E.js';
 import _Eb from './_Eb.js';
@@ -115,25 +115,25 @@ export default [
   add9,
   add11,
   madd9,
-  m9_G,
-  m9_C,
+  m9_B,
+  m9_E,
 
+  m_A,
   m_Ab,
   m_B,
   m_Bb,
   m_C,
-  m_Csharp,
   m_D,
   m_E,
   m_Eb,
   m_F,
   m_Fsharp,
   m_G,
+  _A,
   _Ab,
   _B,
   _Bb,
   _C,
-  _Csharp,
   _D,
   _E,
   _Eb,

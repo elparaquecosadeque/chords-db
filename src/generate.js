@@ -1,15 +1,17 @@
-import { generate } from './tools';
-import db from './db';
+import { generate } from './tools.js';
+import db from './db.js';
 import fs from 'fs';
 import path from 'path';
 
+const root = path.join(import.meta.dirname, '..');
+
 const createDirIfNeeded = () =>
-  fs.existsSync(path.join(__dirname, '..', 'lib')) ||
-  fs.mkdirSync(path.join(__dirname, '..', 'lib'));
+  fs.existsSync(path.join(root, 'lib')) ||
+  fs.mkdirSync(path.join(root, 'lib'));
 
 const generateJSON = (instrument) =>
   fs.writeFileSync(
-    path.join(__dirname, '..', 'lib', `${instrument}.json`),
+    path.join(root, 'lib', `${instrument}.json`),
     JSON.stringify(generate(db[instrument]))
   );
 
@@ -33,7 +35,7 @@ const getNumberOfChords = (chords) =>
 
 const generateIndex = (db) => {
   fs.writeFileSync(
-    path.join(__dirname, '..', 'lib', `instruments.json`),
+    path.join(root, 'lib', `instruments.json`),
     JSON.stringify(
       Object.assign(
         ...Object.keys(db).map((instrument) => ({
