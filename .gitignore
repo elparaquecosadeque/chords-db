@@ -30,6 +30,11 @@ build/Release
 node_modules
 jspm_packages
 
+# Angular app
+chords-ui/dist
+chords-ui/node_modules
+chords-ui/.angular
+
 # Optional npm cache directory
 .npm
 
