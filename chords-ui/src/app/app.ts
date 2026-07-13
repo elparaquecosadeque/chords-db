@@ -78,7 +78,7 @@ export class App implements OnInit {
 
   ngOnInit() {
     for (const name of INSTRUMENTS) {
-      this.http.get<ChordDb>(`/data/${name}.json`).subscribe(data => {
+      this.http.get<ChordDb>(`data/${name}.json`).subscribe(data => {
         this.dbs.update(prev => ({ ...prev, [name]: data }));
       });
     }
