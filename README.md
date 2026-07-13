@@ -1,7 +1,18 @@
 # chords-db
+
+[![Deploy to GitHub Pages](https://github.com/elparaquecosadeque/chords-db/actions/workflows/pages.yml/badge.svg)](https://github.com/elparaquecosadeque/chords-db/actions/workflows/pages.yml)
+
 This is a javascript database of string instruments chords. Open, free to use, easily improved with more chords. 
 Contributions are welcomed, still a lot of chords (and instruments) missing. 
 Use the pull request feature of Github to add your desired chords if you want to contribute.
+
+## Live demo
+
+Browse the chord diagrams interactively:
+
+**[https://elparaquecosadeque.github.io/chords-db/](https://elparaquecosadeque.github.io/chords-db/)**
+
+Guitar, ukulele, and piano — pick a key and explore every chord position.
 
 Take a look at the chords database of an instrument to understand the schema used to register new chords.
 For example, let's take a look at the `Dsus2` chords of guitar. We can see this information in the `D/sus2.js` file:
@@ -49,6 +60,13 @@ Make some testing of the new added chords. Very useful to detect basic mistakes.
 All this information is packed in a JSON library, that you can use to render visually
 with a utility able to parse this information.
 
-You can take a look of the current state of the database with this SVG rendering tool:
+The `chords-ui/` directory in this repo is an Angular 22 app that renders interactive
+chord diagrams — it's what powers the live demo above.
 
-[![chords-db](https://raw.githubusercontent.com/tombatossals/react-chords/webpage/src/images/react-chords.png)](https://tombatossals.github.io/react-chords)
+To run it locally:
+
+```
+cd chords-ui
+npm install
+npm start
+```
