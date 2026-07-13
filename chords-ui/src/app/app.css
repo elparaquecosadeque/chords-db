@@ -1,0 +1,122 @@
+.app-header {
+  background: #2b6cb0;
+  color: white;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,.2);
+}
+
+.app-header h1 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.instrument-tabs {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tab {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.15s;
+  text-transform: capitalize;
+}
+
+.tab.active, .tab:hover {
+  background: white;
+  color: #2b6cb0;
+}
+
+.controls {
+  background: white;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 0.75rem 1.5rem;
+  position: sticky;
+  top: 56px;
+  z-index: 9;
+}
+
+.key-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.key-btn {
+  background: #edf2f7;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: background 0.15s;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.key-btn.active, .key-btn:hover {
+  background: #4299e1;
+  border-color: #4299e1;
+  color: white;
+}
+
+main {
+  padding: 1.5rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 4rem;
+  color: #718096;
+  font-size: 1.1rem;
+}
+
+.chord-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 1rem;
+}
+
+.chord-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.5rem;
+  padding: 0.75rem 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.15s;
+}
+
+.chord-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.chord-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #4a5568;
+  margin-bottom: 0.4rem;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.pos-badge {
+  font-size: 0.65rem;
+  color: #a0aec0;
+  margin-left: 0.25rem;
+}

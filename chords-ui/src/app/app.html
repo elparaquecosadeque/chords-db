@@ -1,0 +1,48 @@
+<header class="app-header">
+  <h1>Chords DB</h1>
+  <nav class="instrument-tabs">
+    @for (name of instruments; track name) {
+      <button class="tab" [class.active]="selectedInstrument() === name"
+              (click)="selectInstrument(name)">
+        {{ name | titlecase }}
+      </button>
+    }
+  </nav>
+</header>
+
+<div class="controls">
+  <div class="key-bar">
+    @for (key of keys(); track key) {
+      <button class="key-btn" [class.active]="selectedKey() === key"
+              (click)="selectKey(key)">
+        {{ key }}
+      </button>
+    }
+  </div>
+</div>
+
+<main>
+  @if (!currentDb()) {
+    <div class="loading">Loading…</div>
+  } @else if (chordCards().length === 0) {
+    <div class="loading">No chords found.</div>
+  } @else {
+    <div class="chord-grid">
+      @for (card of chordCards(); track card.suffix + card.posIndex) {
+        <div class="chord-card">
+          <div class="chord-label">
+            {{ card.key }}{{ card.suffix }}
+            @if (card.total > 1) {
+              <span class="pos-badge">{{ card.posIndex + 1 }}/{{ card.total }}</span>
+            }
+          </div>
+          @if (isPiano()) {
+            <app-piano-diagram [position]="$any(card.position)" />
+          } @else {
+            <app-chord-diagram [position]="card.position" [instrument]="currentDb()!.main" />
+          }
+        </div>
+      }
+    </div>
+  }
+</main>
