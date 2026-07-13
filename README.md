@@ -14,7 +14,37 @@ Browse the chord diagrams interactively:
 
 Guitar, ukulele, and piano — pick a key and explore every chord position.
 
-Take a look at the chords database of an instrument to understand the schema used to register new chords.
+## Install
+
+```
+npm install @gblp/chords-db
+```
+
+## Usage
+
+```js
+import { guitar, ukulele, piano, instruments } from '@gblp/chords-db';
+
+// all chord positions for C major on guitar
+const cMajor = guitar.chords.C.find(c => c.suffix === 'major');
+console.log(cMajor.positions);
+
+// instrument metadata
+console.log(guitar.main);    // { strings: 6, fretsOnChord: 4, name: 'guitar' }
+console.log(guitar.keys);    // ['C', 'C#', 'D', ...]
+console.log(guitar.suffixes); // ['major', 'minor', ...]
+
+// instruments summary (chord counts)
+console.log(instruments); // { guitar: { ... }, ukulele: { ... }, piano: { ... } }
+```
+
+You can also import the JSON files directly:
+
+```js
+import guitar from '@gblp/chords-db/lib/guitar.json' with { type: 'json' };
+```
+
+
 For example, let's take a look at the `Dsus2` chords of guitar. We can see this information in the `D/sus2.js` file:
 
 ```

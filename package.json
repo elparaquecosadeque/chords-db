@@ -1,24 +1,37 @@
 {
-  "name": "@tombatossals/chords-db",
-  "version": "0.6.0",
+  "name": "@gblp/chords-db",
+  "version": "1.0.0",
   "description": "Instrument Chords Database",
   "main": "index.js",
   "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./lib/*": "./lib/*"
+  },
+  "files": [
+    "index.js",
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "node --experimental-vm-modules node_modules/jest-cli/bin/jest.js src",
     "stdout": "node src/generate.js",
     "build": "node src/generate.js json",
-    "precommit": "lint-staged",
-    "prepublish": "npm run build",
+    "prepublishOnly": "npm run build",
     "prettier": "prettier --single-quote --write \"src/**/*.{js,jsx}\""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tombatossals/chords-db.git"
+    "url": "git+https://github.com/elparaquecosadeque/chords-db.git"
   },
   "keywords": [
     "music",
-    "node",
+    "chords",
+    "guitar",
+    "ukulele",
+    "piano",
     "javascript"
   ],
   "author": {
@@ -26,9 +39,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tombatossals/chords-db/issues"
+    "url": "https://github.com/elparaquecosadeque/chords-db/issues"
   },
-  "homepage": "https://github.com/tombatossals/chords-db#readme",
+  "homepage": "https://elparaquecosadeque.github.io/chords-db/",
   "devDependencies": {
     "husky": "^4.2.5",
     "jest": "^30.2.0",
