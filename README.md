@@ -33,6 +33,7 @@ console.log(cMajor.positions);
 console.log(guitar.main);    // { strings: 6, fretsOnChord: 4, name: 'guitar' }
 console.log(guitar.keys);    // ['C', 'C#', 'D', ...]
 console.log(guitar.suffixes); // ['major', 'minor', ...]
+console.log(guitar.formulas.m7); // { formula: ['1', 'b3', '5', 'b7'], optional: ['5'] } (guitar only, slash suffixes excluded)
 
 // instruments summary (chord counts)
 console.log(instruments); // { guitar: { ... }, ukulele: { ... }, piano: { ... } }

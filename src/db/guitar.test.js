@@ -15,6 +15,15 @@ describe('Guitar Chords', () => {
     );
   });
 
+  describe('Formulas', () => {
+    guitar.suffixes
+      .filter((suffix) => !suffix.includes('/'))
+      .map((suffix) =>
+        it(`Type suffix ${suffix} should have a formula starting on the root`, () =>
+          expect(guitar.formulas[suffix].formula[0]).toEqual('1'))
+      );
+  });
+
   describe(`Test Cmajor midi notes`, () => {
     it(`Should match [ 48, 52, 55, 60, 64 ]`, () => {
       const Cmajor = guitar.chords.C.find((chord) => chord.suffix === 'major');
