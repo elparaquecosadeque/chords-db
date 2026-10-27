@@ -24,6 +24,21 @@ describe('Guitar Chords', () => {
       );
   });
 
+  describe('Triads', () => {
+    const Eminor = guitar.chords.E.find((chord) => chord.suffix === 'minor');
+    const triads = Eminor.positions.filter((position) => position.triad);
+    it('Should come after the hand-written positions', () =>
+      expect(Eminor.positions.findIndex((position) => position.triad)).toEqual(4));
+    it('Should include the close triads on the top and middle strings', () => {
+      const codes = triads.map((position) => position.frets);
+      expect(codes).toContain('xxx987');
+      expect(codes).toContain('x754xx');
+      expect(codes).toContain('xx200x');
+    });
+    it('Should leave four-note chords alone', () =>
+      expect(guitar.chords.C.find((chord) => chord.suffix === '7').positions.some((p) => p.triad)).toBe(false));
+  });
+
   describe(`Test Cmajor midi notes`, () => {
     it(`Should match [ 48, 52, 55, 60, 64 ]`, () => {
       const Cmajor = guitar.chords.C.find((chord) => chord.suffix === 'major');

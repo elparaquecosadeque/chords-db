@@ -4,6 +4,7 @@ import keys from './keys.js';
 import suffixes from './suffixes.js';
 import formulas from './formulas.js';
 import chords from './chords/index.js';
+import { addTriads } from './triads.js';
 
 export default {
   main,
@@ -11,5 +12,5 @@ export default {
   keys,
   suffixes,
   formulas,
-  chords,
+  chords: addTriads(chords, formulas),
 };
